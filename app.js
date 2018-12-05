@@ -29,7 +29,7 @@ app.post('/', function (req, res) {
 });
 
 // Module 002
-let module002 = require('./module002/route.js');
+var module002 = require('./module002/route.js');
 app.use('/module002', module002);
 
 // Start application
