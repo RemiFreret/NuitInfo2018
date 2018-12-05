@@ -14,6 +14,10 @@ var db        = {};
 //   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 // }
 
+// le constructeur Sequelize prend en paramétre :
+// 1. Le nom de la base
+// 2. Le nom de l'utilisateur
+// 3. Le mot de passe de l'utilisateur
 var sequelize = new Sequelize('nuitinfo', 'nuitinfo', 'nuitinfo', {
   host: 'localhost',
   dialect: 'mysql',
