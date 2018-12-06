@@ -27,7 +27,6 @@ router.get('/tachecreate', function (req, res) {
         });
     })
 })
-/*
 router.get('/testBDD', function (req, res) {
     models.taches.create({
         objectif: "Rester en vie",

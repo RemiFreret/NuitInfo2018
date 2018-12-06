@@ -9,15 +9,12 @@ module.exports = (sequelize, DataTypes) => {
     duree: DataTypes.INTEGER,
     type: DataTypes.STRING,
     butExp: DataTypes.STRING,
-    /*
-    idMat: {
-    	type: DataTypes.INTEGER,
-    	references: {
-    		model: materiel,
-    		key: 'idMat',
-    	}
-    }
-    */
+
   });
+  var mat  = require('../models/materiel.js');
+
+  console.log('poussin');
+  console.log(mat.Materiel);
+  //Expeditions.hasOne(mat);
   return Expeditions;
 };
