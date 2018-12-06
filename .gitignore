@@ -1,0 +1,4 @@
+
+node_modules/*
+models/index.js
+package-lock\.json
