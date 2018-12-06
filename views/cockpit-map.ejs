@@ -223,16 +223,21 @@
   <script src="../assets/js/plugins/arrive.min.js"></script>
   <!--  Mapbox Maps Plugin    -->
   
-<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
 
 
 <script>
-// Provide your access token
-L.mapbox.accessToken = 'pk.eyJ1IjoiYXplcnR5dWlvcCIsImEiOiJhdUhTWGl3In0.veSYAl56yGD2bNoM9NGvvQ';
-// Create a map in the div #map
-L.mapbox.map('map', 'mapbox.streets');
+mapboxgl.accessToken = 'pk.eyJ1IjoiYXplcnR5dWlvcCIsImEiOiJhdUhTWGl3In0.veSYAl56yGD2bNoM9NGvvQ';
+var map = new mapboxgl.Map({
+    container: 'map',
+    zoom: 9,
+    center: [137.9150899566626, 36.25956997955441],
+    style: 'mapbox://styles/mapbox/satellite-v9'
+});
 </script>
+
+
 
 
   <!-- Chartist JS -->
