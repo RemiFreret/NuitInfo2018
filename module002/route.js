@@ -10,16 +10,7 @@ router.use(function timeLog(req, res, next) {
 
 // define the home page route
 router.get('/', function (req, res) {
-    models.users.create({
-        username: "TOTO"
-    }).then(function() {
-        models.users.findAll().then(function(results) {
-            res.render('module002', {
-              title: 'TEST',
-              users: results
-            });
-        });
-    })
+            res.render('cockpit-index')
 })
 
 module.exports = router;
