@@ -10,14 +10,31 @@ router.use(function timeLog(req, res, next) {
 
 // define the home page route
 router.get('/', function (req, res) {
-    models.base.create({
-        stock: "pano solaire",
-        etat: "abime"
+    models.users.create({
+        username: "TATA"
     }).then(function() {
-        models.base.findAll().then(function(results) {
+        models.users.findAll().then(function(results) {
             res.render('module002', {
               title: 'TEST',
-              base: results
+              users: results
+            });
+        });
+    })
+})
+
+router.get('/testBDD', function (req, res) {
+    models.taches.create({
+        objectif: "Rester en vie",
+        date: new Date(Date.UTC(2016, 0, 1)),
+        priorite: 5,
+        fait: true,
+        duree: 24
+        idExp: 1
+    }).then(function() {
+        models.taches.findAll().then(function(results) {
+            res.render('module002', {
+              title: 'TEST_BDD',
+              taches: results
             });
         });
     })
