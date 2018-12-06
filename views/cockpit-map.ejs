@@ -17,6 +17,7 @@
   <link href="../assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.0/mapbox-gl.css" rel="stylesheet">
 </head>
 
 <body class="">
@@ -220,8 +221,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
   <!-- Library for adding dinamically elements -->
   <script src="../assets/js/plugins/arrive.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key="></script>
+  <!--  Mapbox Maps Plugin    -->
+  
+<script src='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css' rel='stylesheet' />
+
+
+<script>
+// Provide your access token
+L.mapbox.accessToken = 'pk.eyJ1IjoiYXplcnR5dWlvcCIsImEiOiJhdUhTWGl3In0.veSYAl56yGD2bNoM9NGvvQ';
+// Create a map in the div #map
+L.mapbox.map('map', 'mapbox.streets');
+</script>
+
+
   <!-- Chartist JS -->
   <script src="../assets/js/plugins/chartist.min.js"></script>
   <!--  Notifications Plugin    -->
