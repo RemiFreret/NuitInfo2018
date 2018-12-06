@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   var Base = sequelize.define('base', {
     stock: DataTypes.STRING,
-    etat: DataTypes.NUMBER
+    etat: DataTypes.INTEGER
   });
   console.log("TEST");
   return Base;
