@@ -1,12 +1,14 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Materiel = sequelize.define('materiel', {
+  	/*
   	idMat: {
-    	type: Sequelize.INTEGER,
+    	type: DataTypes.INTEGER,
     	primaryKey: true
-    }
-    infos: DataTypes.STRING,
+    },
+    */
+    infos: DataTypes.STRING
   });
-  console.log("TEST");
+  //console.log("TEST");
   return Materiel;
 };
