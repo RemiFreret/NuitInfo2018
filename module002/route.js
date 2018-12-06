@@ -16,12 +16,13 @@ router.get('/', function (req, res) {
         models.users.findAll().then(function(results) {
             res.render('module002', {
               title: 'TEST',
-              users: results
+                users: results
             });
         });
     })
 })
 
+/*
 router.get('/testBDD', function (req, res) {
     models.taches.create({
         objectif: "Rester en vie",
@@ -39,5 +40,5 @@ router.get('/testBDD', function (req, res) {
         });
     })
 })
-
+*/
 module.exports = router;
