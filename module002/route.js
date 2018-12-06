@@ -10,13 +10,14 @@ router.use(function timeLog(req, res, next) {
 
 // define the home page route
 router.get('/', function (req, res) {
-    models.users.create({
-        username: "TOTO"
+    models.base.create({
+        stock: "pano solaire",
+        etat: "abime"
     }).then(function() {
-        models.users.findAll().then(function(results) {
+        models.base.findAll().then(function(results) {
             res.render('module002', {
               title: 'TEST',
-              users: results
+              base: results
             });
         });
     })
