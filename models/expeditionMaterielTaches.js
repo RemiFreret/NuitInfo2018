@@ -14,6 +14,14 @@ module.exports = (sequelize, DataTypes) => {
   var Materiel = sequelize.define('materiel2', {
     infos: DataTypes.STRING
   });
-  Expeditions.hasOne(Materiel);
+  var Taches = sequelize.define('taches2', {
+    objectif: DataTypes.STRING,
+    date: DataTypes.DATEONLY,
+    priorite: DataTypes.INTEGER,
+    fait: DataTypes.BOOLEAN,
+    duree: DataTypes.INTEGER
+  });
+  Expeditions.hasMany(Materiel);
+  Taches.hasOne(Expeditions)
   return Expeditions , Materiel;
 };
