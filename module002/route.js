@@ -21,6 +21,12 @@ router.get('/', function (req, res) {
         });
     })
 })
+router.get('/g', function (req, res) {
+  console.log(models.expeditions2);
+    models.materiel2.create({
+        username: "INFO"
+    })
+})
 
 /*
 router.get('/testBDD', function (req, res) {

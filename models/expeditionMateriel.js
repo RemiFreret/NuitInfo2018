@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var Expeditions = sequelize.define('expeditions', {
+  var Expeditions = sequelize.define('expeditions2', {
     idExp: {
     	type: DataTypes.INTEGER,
     	primaryKey: true
@@ -11,10 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     butExp: DataTypes.STRING,
 
   });
-  var mat  = require('../models/materiel.js');
-
-  console.log('poussin');
-  console.log(mat.Materiel);
-  //Expeditions.hasOne(mat);
-  return Expeditions;
+  var Materiel = sequelize.define('materiel2', {
+    infos: DataTypes.STRING
+  });
+  Expeditions.hasOne(Materiel);
+  return Expeditions , Materiel;
 };
