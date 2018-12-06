@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     date: DataTypes.DATEONLY,
     priorite: DataTypes.INTEGER,
     fait: DataTypes.BOOLEAN,
-    duree: DataTypes.INTEGER,
+    duree: DataTypes.INTEGER
+    /*
     idExp: {
     	type: Sequelize.INTEGER,
     	references: {
@@ -13,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     		key: 'idExp',
     	}
     }
+    */
   });
-  return Users;
+  return Taches;
 };
