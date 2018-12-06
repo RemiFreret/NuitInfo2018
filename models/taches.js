@@ -14,6 +14,5 @@ module.exports = (sequelize, DataTypes) => {
     	}
     }
   });
-  console.log("TEST");
   return Users;
 };
