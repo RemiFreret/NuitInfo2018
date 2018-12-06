@@ -15,7 +15,7 @@ Dans mysql (changez les champs nécéssaires):
 `CREATE DATABASE database;`  
 `GRANT ALL PRIVILEGES ON database.* TO 'username'@'localhost' IDENTIFIED BY 'password';`
 
-Les configuration par défaut sont pour l'instant dans le fichier **models/index.js**  
+Les configurations par défaut sont pour l'instant dans le fichier **models/index.js**  
 Vous pouvez les changer sur votre environnement si ça vous fait plaisir  
 (Si vous voulez vous pouvez aussi changer mysql pour autre chose, il suffit de mettre les bons paramétrages, voir la doc de Sequelize)  
 
