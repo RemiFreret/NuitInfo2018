@@ -26,6 +26,14 @@ router.get('/g', function (req, res) {
     models.materiel2.create({
         username: "INFO"
     })
+    models.taches2.create({
+      objectif: "objectif",
+      date: Date.now(),
+      priorite: 2,
+      fait: true,
+      duree: 3
+    })
+
 })
 
 /*
