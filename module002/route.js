@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
         models.users.findAll().then(function(results) {
             res.render('module002', {
               title: 'TEST',
-              users: results
+                users: results
             });
         });
     })
