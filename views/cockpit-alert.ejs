@@ -21,7 +21,7 @@
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <i class="material-icons">close</i>
                       </button>
-                      <span data-notify="message"><%= alert.privilege %> :<b> <%= alert.name %> - </b><%= alert.description %></span>
+                      <span data-notify="message"><b><%= alert.privilege %> : <%= alert.name %> - </b><%= alert.description %></span>
                       <span data-notify="message"></span>
                       <span data-notify="message"><%= alert.createdAt %></span>
                     </div>
@@ -30,9 +30,10 @@
                 </div>
 
                 <div class="col-md-6">
-                  <h4 class="card-title">All alerts</h4>
+                  <h4 class="card-title">Read alerts</h4>
 
                   <% alert.forEach(function(alert){ %>
+                    <% if(alert.checked==1){ %>
                     <% if(alert.privilege==0){ %><div class="alert alert-info alert-with-icon alert-success" data-notify="container"><% } %>
                     <% if(alert.privilege==1){ %><div class="alert alert-info alert-with-icon alert-warning" data-notify="container"><% } %>
                     <% if(alert.privilege==2){ %><div class="alert alert-info alert-with-icon alert-danger" data-notify="container"><% } %>
@@ -40,54 +41,12 @@
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <i class="material-icons">close</i>
                       </button>
-                      <span data-notify="message"><%= alert.privilege %> :<b> <%= alert.name %> - </b><%= alert.description %></span>
+                      <span data-notify="message"><b><%= alert.privilege %> : <%= alert.name %> - </b><%= alert.description %></span>
                       <span data-notify="message"></span>
                       <span data-notify="message"><%= alert.createdAt %></span>
                     </div>
-                  <% }); %>
+                  <% }}); %>
 
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="places-buttons">
-                <div class="row">
-                  <div class="col-md-6 ml-auto mr-auto text-center">
-                    <h4 class="card-title">
-                      Notifications Places
-                      <p class="category">Click to view notifications</p>
-                    </h4>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <button class="btn btn-primary btn-block" onclick="md.showNotification('top','left')">Top Left</button>
-                      </div>
-                      <div class="col-md-4">
-                        <button class="btn btn-primary btn-block" onclick="md.showNotification('top','center')">Top Center</button>
-                      </div>
-                      <div class="col-md-4">
-                        <button class="btn btn-primary btn-block" onclick="md.showNotification('top','right')">Top Right</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <button class="btn btn-primary btn-block" onclick="md.showNotification('bottom','left')">Bottom Left</button>
-                      </div>
-                      <div class="col-md-4">
-                        <button class="btn btn-primary btn-block" onclick="md.showNotification('bottom','center')">Bottom Center</button>
-                      </div>
-                      <div class="col-md-4">
-                        <button class="btn btn-primary btn-block" onclick="md.showNotification('bottom','right')">Bottom Right</button>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
