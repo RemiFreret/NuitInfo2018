@@ -6,6 +6,5 @@ module.exports = (sequelize, DataTypes) => {
     rythme: DataTypes.INTEGER,
     priorite: DataTypes.INTEGER
   });
-  console.log("TEST");
   return TachesRegulieres;
 };

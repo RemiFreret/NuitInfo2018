@@ -37,7 +37,7 @@ router.post('/formulaire', function(req, res){
   }).then(function(){
     models.expeditions.findAll().then(function(results){
       res.render('module002',{
-        title:'TEST', 
+        title:'TEST',
         expeditions: results
       });
     });
