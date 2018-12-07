@@ -32,6 +32,17 @@ router.get('/g', function (req, res) {
     models.user2.create({
         infos: "INFO"
     })
+    models.materiel2.create({
+        // idExp: 6,
+        // date: date.now(),
+        // duree: 2,
+        // type: "type",
+        // butExp: "but de lexp"
+
+    })
+    // models.expeditions2.create({
+    //
+    // })
 })
 
 /*
