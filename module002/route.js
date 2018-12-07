@@ -43,6 +43,19 @@ router.post('/formulaire', function(req, res){
     });
   })
 
+
+  router.get('/ajoute_outil', function (req, res) {
+      models.materiel.create({
+          info: "TATATO"
+      }).then(function() {
+          models.materiel.findAll().then(function(results) {
+              res.render('module002', {
+                title: 'TEST',
+                  materiel: results
+              });
+          });
+      })
+
 /*
 router.get('/g', function (req, res) {
   console.log(models.expeditions2);
