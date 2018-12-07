@@ -23,17 +23,9 @@ router.get('/', function (req, res) {
 })
 router.get('/g', function (req, res) {
   console.log(models.expeditions2);
-    models.materiel2.create({
-        username: "INFO"
+    models.user2.create({
+        infos: "INFO"
     })
-    models.taches2.create({
-      objectif: "objectif",
-      date: Date.now(),
-      priorite: 2,
-      fait: true,
-      duree: 3
-    })
-
 })
 
 /*
