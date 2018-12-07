@@ -5,6 +5,7 @@ const helper = new OpenWeatherMapHelper(
     units: "metric"
   }
 );
+const models  = require('../models');
 
 function cockpitMain(req, res) {
   res.render('cockpit-index_template', {
@@ -24,12 +25,20 @@ function cockpitWeather(req, res) {
           console.log(err);
         }
         else{
+          if (threeHourForecast.list[0].wind.speed > 13.8) {
+            models.alert.create({
+              name: "Vent",
+              privilege: 1,
+              checked: false,
+              description: "vent de "+threeHourForecast.list[0].wind.speed*3.6+" km/h",
+            });
+          }
           res.render('cockpit-index_template', {
             title: 'Cockpit - Weather',
             currentData: currentWeather,
             forecastData: threeHourForecast,
             page: 'cockpit-weather'
-          });
+          })
         }
       });
     }
@@ -43,6 +52,15 @@ function cockpitDashboard(req, res) {
   });
 }
 
+function cockpitAlert(req, res) {
+  models.alert.findAll().then(function(results) {
+    res.render('cockpit-alert', {
+      title: 'Cockpit - Alert',
+      alert: results
+    });
+  });
+}
+
 module.exports = {
-  cockpitMain, cockpitWeather, cockpitDashboard
+  cockpitMain, cockpitWeather, cockpitDashboard, cockpitAlert
 };
