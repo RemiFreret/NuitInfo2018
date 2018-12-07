@@ -9,14 +9,20 @@ router.use(function timeLog(req, res, next) {
 });
 
 // define the home page route
-router.get('/', function (req, res) {
-    models.users.create({
-        username: "TATA"
+
+
+router.get('/tachecreate', function (req, res) {
+    models.taches.create({
+        objectif: "collecter pierre",
+        date: Date.now(),
+        priorite : 1,
+        fait: false,
+        duree : 15
     }).then(function() {
-        models.users.findAll().then(function(results) {
+        models.taches.findAll().then(function(results) {
             res.render('module002', {
               title: 'TEST',
-                users: results
+                taches: results
             });
         });
     })
