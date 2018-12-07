@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // GET method route
 app.get('/', function (req, res) {
   res.send('GET request to the homepage');
@@ -28,7 +27,7 @@ app.post('/', function (req, res) {
   res.send('POST request to the homepage');
 });
 
-// Module 002
+// Dashboard
 var cockpit = require('./cockpit/route.js');
 app.use('/cockpit', cockpit);
 
