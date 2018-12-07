@@ -37,5 +37,5 @@ function cockpitDashboard(req, res) {
 }
 
 module.exports = {
-  cockpitMain, cockpitWeather, cockpitMap
+  cockpitMain, cockpitWeather, cockpitDashboard
 };
