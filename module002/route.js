@@ -34,17 +34,17 @@ router.get('/g', function (req, res) {
     })
     models.taches.create({
      objectif: "obj",
-       //date: Date.UTC(2016, 0, 1),
+     date: Date.now(),
      priorite: 2,
      fait: true,
      duree: 8
     })
-    models.taches.create({
-     objectif: "obj",
-       //date: Date.UTC(2016, 0, 1),
-     priorite: 2,
-     fait: true,
-     duree: 8
+    models.expeditions.create({
+     idExp: 5,
+     date: Date.now(),
+     duree: 2,
+     type: "type",
+     but: "but"
     })
 })
 
