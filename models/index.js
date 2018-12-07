@@ -21,7 +21,7 @@ var db        = {};
 var sequelize = new Sequelize('nuitinfo', 'nuitinfo', 'nuitinfo', {
   host: 'localhost',
   dialect: 'mysql',
-  port: '8888',
+  port: '3306',
 
   pool: {
     max: 5,
