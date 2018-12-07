@@ -48,7 +48,7 @@ public class HttpURLConnect {
     // HTTP POST request
     public void sendPost(String functionName, String varName, int value) throws Exception {
 
-        String url = "http://10.0.2.2:3000/teleassistance/" + functionName;
+        String url = "http://51.75.89.139:3000/teleassistance/" + functionName;
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
