@@ -8,8 +8,9 @@ $( '#nightmode' ).click(function() {
       $('td').css('color', '#ddd');
       $('.dropdown-menu').css('background-color', '#2C2F33');
       $('.sidebar').css('background-color', '#2C2F33');
-      $('.logo').css('background-color', '#2C2F33');
-      $('.nav-link').css('background-color', '#2C2F33');
+      $('p').css('color', '#eee');
+      $('.header-title').css('color', '#eee');
+      $('.logo-normal').css('color', '#eee!important');
 } else {
       $('body').css('background-color', '#eee');
       $('.card').css('background-color', '#FFFFFF');
@@ -17,7 +18,8 @@ $( '#nightmode' ).click(function() {
       $('.card-title').css('color', '#FFFFFF');
       $('.dropdown-menu').css('background-color', '#FFFFFF');
       $('.sidebar').css('background-color', '#FFFFFF');
-      $('.logo').css('background-color', '#eee');
-      $('.nav-link').css('background-color', '#eee');
+      $('p').css('color', '#2C2F33');
+      $('.header-title').css('color', '#212529');
+      $('.logo-normal').css('color', '#2C2F33!important');
 }
 });
