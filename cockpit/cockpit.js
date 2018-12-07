@@ -54,8 +54,9 @@ function cockpitDashboard(req, res) {
 
 function cockpitAlert(req, res) {
   models.alert.findAll().then(function(results) {
-    res.render('cockpit-alert', {
+    res.render('cockpit-index_template', {
       title: 'Cockpit - Alert',
+      page: 'cockpit-alert',
       alert: results
     });
   });
