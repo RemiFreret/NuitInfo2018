@@ -12,6 +12,7 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "jpg": "0.0.1",
     "mysql2": "^1.6.4",
     "openweathermap-node": "^1.1.2",
     "sequelize": "^4.41.2"
