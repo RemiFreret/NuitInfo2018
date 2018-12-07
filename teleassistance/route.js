@@ -22,6 +22,10 @@ function index (req, res) {
 // 'ded' = 0                        il est pas mort 
 // 'ded' = 1                        il est un peu mort
 // 'ded' = BdvSZBQMJEFSCWLMJKSD     il est peut-être un peu mort
+
+
+// ICI C'EST UN EASTER EGG
+// Parceque c'est marrant
 function is_U_Ded (req, res) {
     var img1, img2, alt1, alt2;
     var param = req.body.ded;
@@ -50,5 +54,10 @@ function is_U_Ded (req, res) {
 
 router.get('/', index);
 router.post('/is_U_Ded', is_U_Ded);
+router.post('/Oxygene', require('./Oxygene.js'));
+router.post('/Hydro', require('./Hydro.js'));
+router.post('/Cardio', require('./Cardio.js'));
+router.post('/Acceleration', require('./Acceleration.js'));
+router.post('/Temperature', require('./Temperature.js'));
 
 module.exports = router; // DO NOT REMOVE IT WORKS
