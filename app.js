@@ -52,7 +52,7 @@ app.use('/teleassistance', routejs);
 
 // Start application
 app.listen(APP_PORT, function () {
-  console.log('Example app listening on port 3000 !')
+  console.log('Example app listening on port ' + APP_PORT + '!')
 })
 
 // Checklist

@@ -13,6 +13,5 @@ module.exports = (sequelize, DataTypes) => {
     hydro : DataTypes.FLOAT
   });
 
-  Tele.create({id: 1});
   return Tele;
 };

@@ -46,9 +46,13 @@ function cockpitWeather(req, res) {
 }
 
 function cockpitDashboard(req, res) {
-  res.render('cockpit-index_template', {
-    title: 'Cockpit - Dashboard',
-    page: 'cockpit-index'
+  models.teleassistance.findOne().then(function(results) {
+    console.log(results);
+    res.render('cockpit-index_template', {
+      title: 'Cockpit - Dashboard',
+      page: 'cockpit-index',
+      results: results,
+    });
   });
 }
 
