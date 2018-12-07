@@ -29,20 +29,16 @@ router.get('/tachecreate', function (req, res) {
 })
 router.get('/g', function (req, res) {
   console.log(models.expeditions2);
-    models.user2.create({
-        infos: "INFO"
+    models.materiel.create({
+      infos: "des infos"
     })
-    models.materiel2.create({
-        // idExp: 6,
-        // date: date.now(),
-        // duree: 2,
-        // type: "type",
-        // butExp: "but de lexp"
-
+    models.taches.create({
+     objectif: "obj",
+       //date: Date.UTC(2016, 0, 1),
+     priorite: 2,
+     fait: true,
+     duree: 8
     })
-    // models.expeditions2.create({
-    //
-    // })
 })
 
 /*
