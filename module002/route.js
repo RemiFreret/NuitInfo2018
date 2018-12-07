@@ -9,26 +9,29 @@ router.use(function timeLog(req, res, next) {
 });
 
 // define the home page route
-router.get('/dashboard', function (req, res) {
-    res.render('cockpit-index')
-})
 
-router.get('/map', function (req, res) {
-    res.render('cockpit-map')
+
+router.get('/tachecreate', function (req, res) {
+    models.taches.create({
+        objectif: "collecter pierre",
+        date: Date.now(),
+        priorite : 1,
+        fait: false,
+        duree : 15
+    }).then(function() {
+        models.taches.findAll().then(function(results) {
+            res.render('module002', {
+              title: 'TEST',
+                taches: results
+            });
+        });
+    })
 })
 router.get('/g', function (req, res) {
   console.log(models.expeditions2);
-    models.materiel2.create({
-        username: "INFO"
+    models.user2.create({
+        infos: "INFO"
     })
-    models.taches2.create({
-      objectif: "objectif",
-      date: Date.now(),
-      priorite: 2,
-      fait: true,
-      duree: 3
-    })
-
 })
 
 router.get('/form', (req, res) => {
