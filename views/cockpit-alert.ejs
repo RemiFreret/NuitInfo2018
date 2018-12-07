@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+    </head>
+    <body>
+        <ul>
+            <% alert.forEach(function(alert){ %>
+              <li><%= alert.name %></li>
+              <li><%= alert.privilege %></li>
+              <li><%= alert.description %></li>
+              <li><%= alert.checked %></li>
+              <li><%= alert.createdAt %></li>
+                <% }); %>
+        </ul>
+    </body>
+</html>
