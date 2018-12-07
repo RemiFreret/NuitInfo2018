@@ -29,8 +29,8 @@ app.post('/', function (req, res) {
 });
 
 // Module 002
-var module002 = require('./module002/route.js');
-app.use('/module002', module002);
+var cockpit = require('./cockpit/route.js');
+app.use('/cockpit', cockpit);
 
 // Start application
 app.listen(APP_PORT, function () {

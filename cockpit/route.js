@@ -9,8 +9,14 @@ router.use(function timeLog(req, res, next) {
 });
 
 // define the home page route
-router.get('/', function (req, res) {
-            res.render('cockpit-index');
+router.get('/dashboard', function (req, res) {
+    res.render('cockpit-index_template', {
+      page: 'cockpit-map'
+    })
+})
+
+router.get('/map', function (req, res) {
+    res.render('cockpit-map')
 })
 
 module.exports = router;
