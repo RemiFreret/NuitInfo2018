@@ -16,6 +16,7 @@ router.use(body_parser.urlencoded({extended:true}));
 function Oxygene (req, res) {
     var img1, img2, alt1, alt2;
     var param = req.body.ded;
+    models.teleassistance.update({oxygene: 5}, { where: {id: 1 }});
 
     // ICI, ON STOCKE LE PARAMETRE DANS LA BDD
     // ET C'EST UN UPDATE PAS UN CREATE

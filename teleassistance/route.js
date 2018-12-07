@@ -15,6 +15,11 @@ router.use(function timeLog(req, res, next) {
 
 // define the home page route
 function index (req, res) {
+    models.teleassistance.findAll().then(
+        function(result) {
+            res.render("teleassistance", {res: result});
+        }
+    )
 };
 
 // define the ded page route
