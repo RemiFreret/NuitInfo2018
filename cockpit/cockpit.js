@@ -8,8 +8,9 @@ const helper = new OpenWeatherMapHelper(
 );
 
 function cockpitMain(req, res) {
-  res.render('cockpit-index', {
+  res.render('cockpit-index_template', {
     title: 'Cockpit',
+    page: 'cockpit-map'
   });
 }
 
