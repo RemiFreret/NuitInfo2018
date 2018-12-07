@@ -1,4 +1,12 @@
-
+#ignore nodejs files
 node_modules/*
-models/index.js
 package-lock\.json
+
+#ingore config file
+models/index\.js
+
+#ignore hidden file
+.*
+
+#but not this file
+!.gitignore

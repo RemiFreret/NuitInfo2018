@@ -9,17 +9,12 @@ router.use(function timeLog(req, res, next) {
 });
 
 // define the home page route
-router.get('/', function (req, res) {
-    models.users.create({
-        username: "TATA"
-    }).then(function() {
-        models.users.findAll().then(function(results) {
-            res.render('module002', {
-              title: 'TEST',
-                users: results
-            });
-        });
-    })
+router.get('/dashboard', function (req, res) {
+    res.render('cockpit-index')
+})
+
+router.get('/map', function (req, res) {
+    res.render('cockpit-map')
 })
 router.get('/g', function (req, res) {
   console.log(models.expeditions2);
