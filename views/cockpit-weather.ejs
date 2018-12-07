@@ -1,11 +1,232 @@
 <!DOCTYPE html>
+<head>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+</head>
+<script>
+var bouchou2témort = { coord: { lon: 0.19, lat: 5.6 },
+  weather:
+   [ { id: 800, main: 'Clear', description: 'clear sky', icon: '01n' } ],
+  base: 'stations',
+  main:
+   { temp: 302.15,
+     pressure: 1011,
+     humidity: 79,
+     temp_min: 302.15,
+     temp_max: 302.15 },
+  visibility: 10000,
+  wind: { speed: 2.6, deg: 220 },
+  clouds: { all: 0 },
+  dt: 1544137200,
+  sys:
+   { type: 1,
+     id: 1126,
+     message: 0.003,
+     country: 'GH',
+     sunrise: 1544075778,
+     sunset: 1544118302 },
+  id: 2294700,
+  name: 'Tema',
+  cod: 200 }
+
+
+var bouchon = { cod: '200',
+  message: 0.0191,
+  cnt: 39,
+  list:
+   [ { dt: 1544151600,
+       main:
+        { temp: 300.35,
+          temp_min: 300.35,
+          temp_max: 302.036,
+          pressure: 1022.39,
+          sea_level: 1023.5,
+          grnd_level: 1022.39,
+          humidity: 97,
+          temp_kf: -1.69 },
+       weather:
+        [ { id: 801,
+            main: 'Clouds',
+            description: 'few clouds',
+            icon: '02n' } ],
+       clouds: { all: 12 },
+       wind: { speed: 3.77, deg: 221.507 },
+       sys: { pod: 'n' },
+       dt_txt: '2018-12-07 03:00:00' },
+     { dt: 1544162400}]}
+
+</script>
 <html lang="en" dir="ltr">
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="refresh" content="300"/>
         <title><%= title %></title>
     </head>
     <body>
-        <p><%= data.main.temp %></p>
+        <div class="site-content">
+            <div class="site-header">
+                <div class="container">
+                    <div class="logo-type">
+                        <h1 class="site-title">Today</h1>
+                    </div>                
+                    <div class="mobile-navigation"></div>
+
+                </div>
+            </div> <!-- .site-header -->
+            <div class="content">
+				<div class="container-fluid">
+		            <div class="row">
+			            <div class="col-lg-3 col-md-6 col-sm-6">
+				            <div class="card card-stats">
+				                <div class="card-header card-header-warning card-header-icon">
+				                  <div class="card-icon">
+				                    <i class="fas fa-thermometer-three-quarters"></i>
+				                  </div>
+				                  <p class="card-category">Temperature</p>
+				                  <h3 class="card-title"><%= Math.round(currentData.main.temp/274,15) %>
+				                    <small>°C</small>
+				                  </h3>
+				                </div>
+				                <div class="card-footer">
+				                  <div class="stats">
+				                    Today <%=new Date().toJSON().slice(0,10).replace(/-/g,'/');%>
+				                  </div>
+				                </div>
+				            </div>
+			            </div>
+			            <div class="col-lg-3 col-md-6 col-sm-6">
+				            <div class="card card-stats">
+				                <div class="card-header card-header-success card-header-icon">
+				                  <div class="card-icon">
+				                    <i class="fas fa-tint"></i>
+				                  </div>
+				                  <p class="card-category">Humidité</p>
+				                  <h3 class="card-title"><%= currentData.main.humidity %> %</h3>
+				                </div>
+				                <div class="card-footer">
+				                  <div class="stats">
+				                    Today <%=new Date().toJSON().slice(0,10).replace(/-/g,'/');%>
+				                  </div>
+				                </div>
+				            </div>
+			            </div>
+			            <div class="col-lg-3 col-md-6 col-sm-6">
+				            <div class="card card-stats">
+				                <div class="card-header card-header-danger card-header-icon">
+				                  <div class="card-icon">
+				                    <i class="fas fa-wind"></i>
+				                  </div>
+				                  <p class="card-category">Vent</p>
+				                  <h3 class="card-title"><%= currentData.wind.speed %> m/s</h3>
+				                </div>
+				                <div class="card-footer">
+				                  <div class="stats">
+				                    Today <%=new Date().toJSON().slice(0,10).replace(/-/g,'/');%>
+				                  </div>
+				                </div>
+				            </div>
+			            </div>
+			            <div class="col-lg-3 col-md-6 col-sm-6">
+				            <div class="card card-stats">
+				                <div class="card-header card-header-info card-header-icon">
+				                  <div class="card-icon">
+				                    <i class="fas fa-tachometer-alt"></i>
+				                  </div>
+				                  <p class="card-category">Pression</p>
+				                  <h3 class="card-title"><%= currentData.main.pressure %> hPa</h3>
+				                </div>
+				                <div class="card-footer">
+				                  <div class="stats">
+				                    Today
+				                  </div>
+				                </div>
+				            </div>
+			            </div>
+		          	</div>
+		          	<div class="site-header">
+		                <div class="container">
+		                    <div class="logo-type">
+		                        <h1 class="site-title"><%= forecastData.list[0].dt_txt.split(" ")[0] %></h1>
+		                    </div>                
+		                    <div class="mobile-navigation"></div>
+
+		                </div>
+            		</div> 
+		          	<div class="row">
+			            <div class="col-lg-3 col-md-6 col-sm-6">
+				            <div class="card card-stats">
+				                <div class="card-header card-header-warning card-header-icon">
+				                  <div class="card-icon">
+				                    <i class="fas fa-thermometer-three-quarters"></i>
+				                  </div>
+				                  <p class="card-category">Temperature</p>
+				                  <h3 class="card-title"><%= Math.round(forecastData.list[0].main.temp/274,15) %>
+				                    <small>°C</small>
+				                  </h3>
+				                </div>
+				                <div class="card-footer">
+				                  <div class="stats">
+				                    <%= forecastData.list[0].dt_txt %>
+				                  </div>
+				                </div>
+				            </div>
+			            </div>
+			            <div class="col-lg-3 col-md-6 col-sm-6">
+				            <div class="card card-stats">
+				                <div class="card-header card-header-success card-header-icon">
+				                  <div class="card-icon">
+				                    <i class="fas fa-tint"></i>
+				                  </div>
+				                  <p class="card-category">Humidité</p>
+				                  <h3 class="card-title"><%= forecastData.list[0].main.humidity %> %</h3>
+				                </div>
+				                <div class="card-footer">
+				                  <div class="stats">
+				                    <%= forecastData.list[0].dt_txt %>
+				                  </div>
+				                </div>
+				            </div>
+			            </div>
+			            <div class="col-lg-3 col-md-6 col-sm-6">
+				            <div class="card card-stats">
+				                <div class="card-header card-header-danger card-header-icon">
+				                  <div class="card-icon">
+				                    <i class="fas fa-wind"></i>
+				                  </div>
+				                  <p class="card-category">Vent</p>
+				                  <h3 class="card-title"><%= forecastData.list[0].wind.speed %> m/s</h3>
+				                </div>
+				                <div class="card-footer">
+				                  <div class="stats">
+				                    <%= forecastData.list[0].dt_txt %>
+				                  </div>
+				                </div>
+				            </div>
+			            </div>
+			            <div class="col-lg-3 col-md-6 col-sm-6">
+				            <div class="card card-stats">
+				                <div class="card-header card-header-info card-header-icon">
+				                  <div class="card-icon">
+				                    <i class="fas fa-tachometer-alt"></i>
+				                  </div>
+				                  <p class="card-category">Pression</p>
+				                  <h3 class="card-title"><%= forecastData.list[0].main.pressure %> hPa</h3>
+				                </div>
+				                <div class="card-footer">
+				                  <div class="stats">
+				                    <%= forecastData.list[0].dt_txt %>
+				                  </div>
+				                </div>
+				            </div>
+			            </div>
+		          	</div>
+				</div>
+			</div>
+		</div>
     </body>
+</html>
+		
+	</body>
+
 </html>
