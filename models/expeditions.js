@@ -1,10 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Expeditions = sequelize.define('expeditions', {
-    // idExp: {
-    // 	type: DataTypes.INTEGER,
-    // 	primaryKey: true
-    // },
+    idExp: DataTypes.INTEGER,
     date: DataTypes.DATEONLY,
     duree: DataTypes.INTEGER,
     type: DataTypes.STRING,

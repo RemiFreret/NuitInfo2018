@@ -32,16 +32,29 @@ router.get('/formulaire', function (req, res) {
         });
     })
 })
+
 router.post('/formulaire', function(req, res){
-  model.expeditions.create({
-    idExp:req.body['text1'],
-    date:req.body['text3'],
-    duree: req.body['text2'],
-    type:req.body['Type'],
-    butexp:req.body['but']
+    console.log("TEST", req.body);
+
+  //   console.log(req.body);
+  //
+  // //   { text1: 'reqf',
+  // // text3: '2018-12-08',
+  // // text2: '1',
+  // // Type: 'recolte',
+  // // But: 'Soccuper' }
+
+
+  models.expeditions.create({
+    idExp:"1",
+    date:req.body.text3,
+    duree: req.body.text2,
+    type:req.body.Type,
+    butExp:req.body.But
   }).then(function(){
     models.expeditions.findAll().then(function(results){
-      res.render('module002',{
+        res.render('cockpit-index_template', {
+          page: 'module002yeah',
         title:'TEST',
         expeditions: results
       });

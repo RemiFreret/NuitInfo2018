@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet" media="all" type="text/css">
+        <title></title>
+
+    </head>
+
+    <body>
+        <ul>
+            <% expeditions.forEach(function(expedition){ %>
+            <li>
+                <%= expedition.idExp %>
+            </li>
+            <li>
+                <%= expedition.date %>
+            </li>
+            <li>
+                <%= expedition.duree %>
+            </li>
+
+            <li>
+                <%= expedition.type %>
+            </li>
+            <li>
+                <%= expedition.butExp %>
+            </li>
+            <% }); %>
+        </ul>
+    </body>
+</html>
