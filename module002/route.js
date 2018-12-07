@@ -39,6 +39,13 @@ router.get('/g', function (req, res) {
      fait: true,
      duree: 8
     })
+    models.taches.create({
+     objectif: "obj",
+       //date: Date.UTC(2016, 0, 1),
+     priorite: 2,
+     fait: true,
+     duree: 8
+    })
 })
 
 router.get('/expeditions', function (req, res) {
