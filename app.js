@@ -36,3 +36,7 @@ app.use('/module002', module002);
 app.listen(APP_PORT, function () {
   console.log('Example app listening on port 3000 !')
 })
+
+// Checklist
+var checklist = require('./checklist/index.js');
+app.use('/checklist', checklist);
