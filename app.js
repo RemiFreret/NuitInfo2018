@@ -28,6 +28,10 @@ app.post('/', function (req, res) {
   res.send('POST request to the homepage');
 });
 
+// Module route.js
+var routejs = require('./teleassistance/route.js');
+app.use('/teleassistance', routejs);
+
 // Module 002
 var module002 = require('./module002/route.js');
 app.use('/module002', module002);

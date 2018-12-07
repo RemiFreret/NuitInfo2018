@@ -1,6 +1,10 @@
 var models  = require('../models');
 var express = require('express');
 var router = express.Router();
+var body_parser = require('body-parser');
+
+router.use(body_parser.json());
+router.use(body_parser.urlencoded({extended:true}));
 
 // middleware that is specific to this router
 router.use(function timeLog(req, res, next) {
@@ -25,8 +29,8 @@ function index (req, res) {
 // define the home page route
 function aiTuMors (req, res) {
     var toPrint;
-    var param = req.params.lol;
-    for (p in req.query){
+    var param = req.body.lol;
+    for (p in req.body){
         console.log(p);
     }
     if(param == 0){
