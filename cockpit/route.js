@@ -17,4 +17,7 @@ router.get('/dashboard',cockpit.cockpitDashboard)
 // define the weather page route
 router.get('/weather', cockpit.cockpitWeather)
 
+// define the alert page route
+router.get('/alert', cockpit.cockpitAlert)
+
 module.exports = router;
