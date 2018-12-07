@@ -28,9 +28,15 @@ app.post('/', function (req, res) {
   res.send('POST request to the homepage');
 });
 
+<<<<<<< HEAD
 // Dashboard
 var dashboard = require('./dashboard/route.js');
 app.use('/dashboard', dashboard);
+=======
+// Module 002
+var cockpit = require('./cockpit/route.js');
+app.use('/cockpit', cockpit);
+>>>>>>> grp-cockpit
 
 // Start application
 app.listen(APP_PORT, function () {
