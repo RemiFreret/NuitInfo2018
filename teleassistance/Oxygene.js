@@ -36,7 +36,11 @@ router.use(body_parser.urlencoded({extended:true}));
 // 'oxy' = BdvSZBQMJEFSCWLMJKSD     il est peut-être un peu mort
 function Oxygene (req, res) {
     var img1, img2, alt1, alt2;
+
     var param = req.body.oxy; //more lol ? // d'ailleurs, occis-mort est un pléonasme x)
+
+    models.teleassistance.update({oxygene: 5}, { where: {id: 1 }});
+
 
     // ICI, ON STOCKE LE PARAMETRE DANS LA BDD
     // ET C'EST UN UPDATE PAS UN CREATE
