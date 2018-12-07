@@ -47,6 +47,9 @@ app.use('/cockpit', cockpit);
 var cockpit = require('./module002/route.js');
 app.use('/module002', cockpit);
 
+var routejs = require('./teleassistance/route.js');
+app.use('/teleassistance', routejs);
+
 // Start application
 app.listen(APP_PORT, function () {
   console.log('Example app listening on port 3000 !')
