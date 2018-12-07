@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 // app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 // GET method route
 app.get('/', function (req, res) {
   res.send('GET request to the homepage');
