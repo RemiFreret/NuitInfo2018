@@ -22,7 +22,7 @@ public class MainService extends Service{
     public static final String BROADCAST_ACTION = "com.nouvel.skipmix.displayevent";
     Intent intent;
 
-    private Thread threadControl;
+    private Thread mainThreadService; // thread du service
 
 
     public class MonBinder extends Binder {
@@ -37,22 +37,23 @@ public class MainService extends Service{
         super.onCreate();
 
 
-        threadControl = new Thread(new Runnable() {
+        mainThreadService = new Thread(new Runnable() {
             @Override
             public void run() {
 
                 final HttpURLConnect httpURLConnect = new HttpURLConnect();
 
+                //tache qui se lance a intervaux réguliers
                 TimerTask timerTask = new TimerTask() {
                     @Override
                     public void run() {
                         try {
-                            httpURLConnect.sendPost("Oxygene","oxy",10);
+                            //envoi des informations avec des post
+                            httpURLConnect.sendPost("Oxygene","oxy",99);
                             httpURLConnect.sendPost("Cardio","bpm",60);
                             httpURLConnect.sendPost("Temperature","temp",30);
                             httpURLConnect.sendPost("Acceleration","acc",30);
-                            httpURLConnect.sendPost("Hydro","hyd",30);
-                            httpURLConnect.wait(1000);//1 secondes
+                            httpURLConnect.sendPost("Hydro","hyd",80);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         } catch (Exception e) {
@@ -62,11 +63,11 @@ public class MainService extends Service{
                 };
 
                 Timer timer = new Timer();
-                timer.scheduleAtFixedRate(timerTask,0,1000);
+                timer.scheduleAtFixedRate(timerTask,0,1000);//toutes les 1 s
 
             }
         });
-        threadControl.start();
+        mainThreadService.start();
         intent = new Intent(BROADCAST_ACTION);
     }
 
