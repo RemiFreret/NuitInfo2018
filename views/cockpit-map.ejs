@@ -20,13 +20,75 @@
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
 
   <script>
-  mapboxgl.accessToken = 'pk.eyJ1IjoiYXplcnR5dWlvcCIsImEiOiJhdUhTWGl3In0.veSYAl56yGD2bNoM9NGvvQ';
+  mapboxgl.accessToken = 'pk.eyJ1IjoiYXplcnR5dWlvcCIsImEiOiJjanBkNjZpZWYwNGU0M3FvY3pwcjh5eGNkIn0.Ror121daSoQUiXHiCbMGQQ';
   var map = new mapboxgl.Map({
       container: 'map',
       zoom: 9,
       center: [137.9150899566626, 36.25956997955441],
       style: 'mapbox://styles/mapbox/satellite-v9'
   });
+
+// variable de position
+var x=10;
+var y=10;
+
+// variable d'update de la map
+var update = true;
+
+
+
+function setPos(x,y) {
+  return {
+    "type": "Point",
+    "coordinates": [
+    x,
+    y
+    ]
+  };
+}
+
+map.on('load', function () {
+    // Add a source and layer displaying a point which will be animated in a circle.
+    map.addSource('point', {
+      "type": "geojson",
+      "data": setPos(10,10)
+    });
+// Ajout du point sur la map
+map.addLayer({
+  "id": "point",
+  "source": "point",
+  "type": "circle",
+  "paint": {
+    "circle-radius": 10,
+    "circle-color": "#007cbf"
+  }
+});
+
+
+function animateMarker(timestamp) {
+
+if((timestamp % 3000)<2000 && (timestamp % 3000)>1000 && update){
+              x = x+0.001;
+              y = y+0.001;
+              update = false;
+              map.getSource('point').setData(setPos(x,y));
+            }
+            else{
+              update = true;
+            }
+        // Request the next frame of the animation.
+        requestAnimationFrame(animateMarker);
+}
+
+    // Start the animation.
+    animateMarker(0);
+  });
+
+
+
+
+   
+
   </script>
 </body>
 
