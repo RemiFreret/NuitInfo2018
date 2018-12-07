@@ -123,6 +123,6 @@ router.get('/testBDD', function (req, res) {
         });
     })
 
+    */
 })
-*/
 module.exports = router;

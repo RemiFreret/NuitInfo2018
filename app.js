@@ -27,6 +27,15 @@ app.post('/', function (req, res) {
   res.send('POST request to the homepage');
 });
 
+app.get('/metrololol', function (req, res) {
+    fs.readFile('metrololol.jpg', function(err, data) {
+      if (err) throw err;
+        res.writeHead(200, {'Content-Type': 'image/jpeg'});
+        res.end(data);
+    });
+  //res.send('POST request to the homepage');
+});
+
 // Dashboard
 var cockpit = require('./cockpit/route.js');
 app.use('/cockpit', cockpit);
