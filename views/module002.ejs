@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
     <head>
-        <meta charset="utf-8">
-        <title>TEST</title>
+        <meta charset="UTF-8">
+        <title></title>
+   
     </head>
-
-            <% taches.forEach(function(tache){ %>
-                <li><%= tache.objectif %></li>
-                <li><%= tache.date %></li>
-                <% }); %>
-        </ul>
-        <ul>
-
-        </ul>
+    <body>
+        <form method='post' action="/formulaire">
+            <label>nom</label>
+            <input name=text1 type=text value="" id="poet">
+            <br>
+            <label> date </label>
+            <input name = text3 type=date value=""id="peauette">
+            <br>
+            <label> durée </label>
+            <input name = text2 type=number value="" id="pwet">
+            <br>
+            <SELECT name="Type" size "1" id="pouet">
+            <OPTION>recolte</OPTION>
+            <OPTION>exploration</OPTION>
+            </SELECT>
+            <br>
+            <SELECT name="But" size "1"id="paouet">
+            <OPTION>Soccuper</OPTION>
+            <OPTION>fairedesnoeudssurgit</OPTION>
+            </SELECT>
+            <br>
+            <input type="submit">
+        </form>
+        
     </body>
 </html>
-
-
-

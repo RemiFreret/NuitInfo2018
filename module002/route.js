@@ -11,7 +11,7 @@ router.use(function timeLog(req, res, next) {
 // define the home page route
 
 
-router.get('/tachecreate', function (req, res) {
+router.get('/formulaire', function (req, res) {
     models.taches.create({
         objectif: "collecter pierre",
         date: Date.now(),
@@ -27,22 +27,21 @@ router.get('/tachecreate', function (req, res) {
         });
     })
 })
-router.get('/testBDD', function (req, res) {
-    models.taches.create({
-        objectif: "Rester en vie",
-        date: new Date(Date.UTC(2016, 0, 1)),
-        priorite: 5,
-        fait: true,
-        duree: 24
-        idExp: 1
-    }).then(function() {
-        models.taches.findAll().then(function(results) {
-            res.render('module002', {
-              title: 'TEST_BDD',
-              taches: results
-            });
-        });
-    })
+router.post('/formulaire', function(req, res){
+  model.expeditions.create({
+    idExp:req.body['text1'],
+    date:req.body['text3'],
+    duree: req.body['text2'],
+    type:req.body['Type'],
+    butexp:req.body['but']
+  }).then(function(){
+    models.expeditions.findAll().then(function(results){
+      res.render('module002',{
+        title:'TEST', 
+        expeditions: results
+      });
+    });
+  })
+
 })
-*/
 module.exports = router;
