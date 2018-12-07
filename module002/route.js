@@ -40,7 +40,7 @@ router.get('/g', function (req, res) {
      duree: 8
     })
     models.expeditions.create({
-     idExp: 5,
+    // idExp: 5,
      date: Date.now(),
      duree: 2,
      type: "type",
