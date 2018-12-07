@@ -5,23 +5,12 @@
         <title>TEST</title>
     </head>
 
-            <% taches.forEach(function(tache){ %>
-                <li><%= tache.objectif %></li>
-                <li><%= tache.date %></li>
+            <% expeditions.forEach(function(expedition){ %>
+                <li><%= expedition.date %></li>
+                <li><%= expedition.duree%></li>
+                <li><%= expedition.type%></li>
+                <li><%= expedition.butExp%></li>
                 <% }); %>
-        </ul>
-<<<<<<< Updated upstream
-        <ul>
 
-=======
-		<ul>
-            <% users.forEach(function(user){ %>
-                <li><%= user.createdAt %></li>
-                <% }); %>
->>>>>>> Stashed changes
-        </ul>
     </body>
 </html>
-
-
-
