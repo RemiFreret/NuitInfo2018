@@ -1,10 +1,9 @@
-const OpenWeatherMapHelper = require("openweathermap-node");
-
+const OpenWeatherMapHelper = require('openweathermap-node');
 const helper = new OpenWeatherMapHelper(
-    {
-        APPID: '9fd6759be5292674813461f216c326a6',
-        units: "metric"
-    }
+  {
+    APPID: '9fd6759be5292674813461f216c326a6',
+    units: "metric"
+  }
 );
 
 function cockpitMain(req, res) {
@@ -15,17 +14,25 @@ function cockpitMain(req, res) {
 }
 
 function cockpitWeather(req, res) {
-  helper.getCurrentWeatherByGeoCoordinates(5.6037, 0.1870, (err, currentWeather) => {
-      if(err){
+  var getWeather = helper.getCurrentWeatherByGeoCoordinates(5.6037,0.1870, (err, currentWeather) => {
+    if(err){
+      console.log(err);
+    }
+    else{
+      helper.getThreeHourForecastByGeoCoordinates(5.6037,0.1870, (err, threeHourForecast) => {
+        if(err){
           console.log(err);
-      }
-      else{
-        res.render('cockpit-index_template', {
-          title: 'Cockpit - Weather',
-          data: currentWeather,
-          page: 'cockpit-weather'
-        });
-      }
+        }
+        else{
+          res.render('cockpit-index_template', {
+            title: 'Cockpit - Weather',
+            currentData: currentWeather,
+            forecastData: threeHourForecast,
+            page: 'cockpit-weather'
+          });
+        }
+      });
+    }
   });
 }
 
@@ -37,5 +44,5 @@ function cockpitDashboard(req, res) {
 }
 
 module.exports = {
-  cockpitMain, cockpitWeather, cockpitMap
+  cockpitMain, cockpitWeather, cockpitDashboard
 };
