@@ -12,6 +12,7 @@ router.use(function timeLog(req, res, next) {
 
 
 router.get('/tachecreate', function (req, res) {
+
     models.taches.create({
         objectif: "collecter pierre",
         date: Date.now(),
@@ -20,10 +21,15 @@ router.get('/tachecreate', function (req, res) {
         duree : 15
     }).then(function() {
         models.taches.findAll().then(function(results) {
-            res.render('module002', {
+            // res.render('module002', {
+            //   title: 'TEST',
+            //     taches: results
+            // });
+            res.render('cockpit-index_template', {
+              page: 'module002',
               title: 'TEST',
                 taches: results
-            });
+            })
         });
     })
 })
@@ -35,14 +41,18 @@ router.get('/g', function (req, res) {
 })
 
 router.get('/form', (req, res) => {
-    res.render('form')
+    // res.render('form')
+    res.render('cockpit-index_template', {
+      page: 'form',
+    })
 })
 
 
 
-router.get('/form', (req, res) => {
-    res.render('form')
-  })
+//
+// router.get('/form', (req, res) => {
+//     res.render('form')
+//   })
 
 /*
 router.get('/testBDD', function (req, res) {
