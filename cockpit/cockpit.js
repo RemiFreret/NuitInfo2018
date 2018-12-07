@@ -9,7 +9,7 @@ const helper = new OpenWeatherMapHelper(
 
 function cockpitMain(req, res) {
   res.render('cockpit-index_template', {
-    title: 'Cockpit',
+    title: 'Cockpit - Map',
     page: 'cockpit-map'
   });
 }
@@ -20,17 +20,19 @@ function cockpitWeather(req, res) {
           console.log(err);
       }
       else{
-        res.render('cockpit-weather', {
+        res.render('cockpit-index_template', {
           title: 'Cockpit - Weather',
           data: currentWeather,
+          page: 'cockpit-weather'
         });
       }
   });
 }
 
-function cockpitMap(req, res) {
-  res.render('cockpit-map', {
-    title: 'Cockpit - Map',
+function cockpitDashboard(req, res) {
+  res.render('cockpit-index_template', {
+    title: 'Cockpit - Dashboard',
+    page: 'cockpit-index'
   });
 }
 

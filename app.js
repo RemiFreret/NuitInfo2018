@@ -32,7 +32,6 @@ app.post('/', function (req, res) {
 var cockpit = require('./cockpit/route.js');
 app.use('/cockpit', cockpit);
 
-
 // Start application
 app.listen(APP_PORT, function () {
   console.log('Example app listening on port 3000 !')

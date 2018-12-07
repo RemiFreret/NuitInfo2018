@@ -11,10 +11,10 @@ router.use(function timeLog(req, res, next) {
 // define the home page route
 router.get('/',cockpit.cockpitMain)
 
+// define the dashboard page route
+router.get('/dashboard',cockpit.cockpitDashboard)
+
 // define the weather page route
 router.get('/weather', cockpit.cockpitWeather)
-
-// define the map page route
-router.get('/map', cockpit.cockpitMap)
 
 module.exports = router;
